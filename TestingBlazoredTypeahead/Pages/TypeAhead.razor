@@ -1,4 +1,7 @@
-﻿@using Blazored.Typeahead
+﻿@page "/typeahead"
+@using Blazored.Typeahead
+<h1> Blazored Typeahead</h1>
+<EditForm Model="@People" OnValidSubmit="HandleValidSubmit">
 <BlazoredTypeahead SearchMethod="GetPeopleLocal"
 				   ConvertMethod="ConvertPerson"
 				   @bind-Value="SelectedPersonId"
@@ -14,7 +17,7 @@
 		@person.Firstname @person.Lastname (Id: @person.Id)
 	</ResultTemplate>
 </BlazoredTypeahead>
-
+</EditForm>
 @code {
 	public int SelectedPersonId { get; set; }
 	private List<Person> People = new List<Person>();
@@ -45,6 +48,9 @@
 		public string Lastname { get; set; }
 	}
 
+	private void HandleValidSubmit()
+	{
 
+	}
 
 }

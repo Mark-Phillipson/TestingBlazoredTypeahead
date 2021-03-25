@@ -19,7 +19,7 @@
 </BlazoredTypeahead>
 </EditForm>
 @code {
-	public int SelectedPersonId { get; set; }
+	public int? SelectedPersonId { get; set; }
 	private List<Person> People = new List<Person>();
 
 	protected override void OnInitialized()
